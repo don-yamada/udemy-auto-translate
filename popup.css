@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+}
+
+.popup-container {
+  width: 250px;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1c1d1f;
+}
+
+.mode-section {
+  border: 1px solid #e8e9eb;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.mode-section legend {
+  font-size: 12px;
+  color: #6a6f73;
+  padding: 0 4px;
+}
+
+.mode-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 13px;
+  color: #1c1d1f;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  accent-color: #5624d0;
+  cursor: pointer;
+}
+
+.language-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.language-section label {
+  font-size: 13px;
+  color: #1c1d1f;
+}
+
+select {
+  padding: 4px 8px;
+  font-size: 13px;
+  border: 1px solid #d1d7dc;
+  border-radius: 4px;
+  background: #fff;
+  color: #1c1d1f;
+  cursor: pointer;
+  outline: none;
+}
+
+select:focus {
+  border-color: #5624d0;
+}
+
+.status-section {
+  padding-top: 10px;
+  border-top: 1px solid #e8e9eb;
+  text-align: center;
+}
+
+#statusText {
+  font-size: 12px;
+  color: #6a6f73;
+}
