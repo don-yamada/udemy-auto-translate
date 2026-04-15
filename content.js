@@ -198,13 +198,16 @@ if (typeof chrome !== 'undefined' && chrome.runtime) {
   function tryInjectButton() {
     if (document.getElementById('uat-toggle-btn')) return;
     injectToggleButton();
-    if (!document.getElementById('uat-toggle-btn')) {
-      const interval = setInterval(() => {
-        injectToggleButton();
-        if (document.getElementById('uat-toggle-btn')) clearInterval(interval);
-      }, 2000);
-    }
   }
+
+  /** body全体を監視し、フッターが出現したらボタンを再注入する */
+  const bodyObserver = new MutationObserver(() => {
+    // ボタンが消えていたら再注入を試みる
+    if (!document.getElementById('uat-toggle-btn')) {
+      injectToggleButton();
+    }
+  });
+  bodyObserver.observe(document.body, { childList: true, subtree: true });
 
   chrome.runtime.onMessage.addListener((message, _sender, _sendResponse) => {
     if (message.type === MESSAGE_TYPES.SETTINGS_CHANGED) {
